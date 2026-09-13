@@ -39,6 +39,7 @@ Testing:
 • Jest
 • Supertest
 4. Project Structure
+```
 lld-practice-platform/
 │
 ├── client/
@@ -76,7 +77,8 @@ lld-practice-platform/
 ├── RESEARCH.md
 ├── AI_USAGE.md
 └── README.md
-5. Getting Started
+```
+6. Getting Started
 Prerequisites:
 • Node.js
 • npm
