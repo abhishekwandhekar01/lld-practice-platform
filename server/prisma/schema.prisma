@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Problem {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  description String
+  difficulty  String
+  requirements String
+  createdAt   DateTime  @default(now())
+
+  attempts    Attempt[]
+}
+
+model Attempt {
+  id           String       @id @default(cuid())
+  problemId    String
+  submission   String
+  status       AttemptStatus @default(SUBMITTED)
+  createdAt    DateTime     @default(now())
+  submittedAt  DateTime     @default(now())
+
+  problem      Problem      @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  evaluation   Evaluation?
+}
+
+model Evaluation {
+  id          String             @id @default(cuid())
+  attemptId   String             @unique
+  totalScore  Int
+  status      EvaluationStatus  @default(EVALUATING)
+  createdAt   DateTime           @default(now())
+  completedAt DateTime?
+
+  attempt     Attempt            @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  feedback    Feedback[]
+}
+
+model Feedback {
+  id          String     @id @default(cuid())
+  evaluationId String
+  criterion   String
+  score       Int
+  maxScore    Int
+  evidence    String
+  concern     String
+  suggestion  String
+  confidence  Float
+
+  evaluation  Evaluation @relation(fields: [evaluationId], references: [id], onDelete: Cascade)
+}
+
+enum AttemptStatus {
+  SUBMITTED
+  EVALUATING
+  COMPLETED
+  FAILED
+}
+
+enum EvaluationStatus {
+  EVALUATING
+  COMPLETED
+  FAILED
+}
