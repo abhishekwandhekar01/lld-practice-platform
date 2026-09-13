@@ -78,34 +78,48 @@ lld-practice-platform/
 ├── AI_USAGE.md
 └── README.md
 ```
-6. Getting Started
+5. Getting Started
 Prerequisites:
 • Node.js
 • npm
+
 Backend setup:
 1. Open a terminal in the project folder.
 2. Run:
+```
 cd server
 npm install
+```
 3. Create a .env file inside the server folder:
+```
 DATABASE_URL="file:./dev.db"
+```
 4. Generate Prisma Client:
+```
 npx prisma generate
+```
 5. Run database migrations:
-npx prisma migrate dev
+```npx prisma migrate dev```
 6. Seed practice problems:
-npm run seed
+```npm run seed```
 7. Start the backend:
-npm run dev
+```npm run dev```
 The backend runs on:
+```
 http://localhost:5000
+```
+
 Frontend setup:
 Open a second terminal:
+```
 cd client
 npm install
 npm run dev
+```
 Vite will display the local frontend URL, normally:
+```
 http://localhost:5173
+```
 6. Application Flow
 1. Problems
 The learner can browse available LLD problems. Problems can be searched, filtered by difficulty, and opened for practice.
@@ -138,6 +152,7 @@ Edge Cases & Extensibility — 20 points
 Total — 100 points
 The evaluator looks for evidence related to requirements, domain classes, responsibilities, design concepts, extensibility, and edge cases.
 8. Domain Model
+```
 Problem
    |
    | 1 : many
@@ -151,6 +166,7 @@ Evaluation
    | 1 : many
    ↓
 Feedback
+```
 Problem:
 Represents an LLD problem available for practice.
 Attempt:
@@ -160,6 +176,7 @@ Represents the assessment of an attempt.
 Feedback:
 Represents criterion-level feedback produced by an evaluation.
 9. Attempt Status
+```
 SUBMITTED
     ↓
 EVALUATING
@@ -169,24 +186,37 @@ If evaluation fails:
 EVALUATING
     ↓
 FAILED
+```
 The state model also allows asynchronous evaluation in a future version.
 10. API Endpoints
+```
 GET /api/health
+```
 Checks whether the backend API is running.
+```
 GET /api/problems
+```
 Returns all available LLD problems.
+```
 GET /api/problems/:slug
+```
 Returns a specific problem using its slug.
+```
 POST /api/attempts
+```
 Creates an attempt and evaluates the submitted solution.
 Example request:
+```
 {
   "problemId": "problem-id",
   "submission": "My LLD solution..."
 }
 GET /api/attempts
+```
 Returns previous attempts with their evaluation and feedback.
+```
 GET /api/attempts/:id
+```
 Returns a specific attempt with its problem, evaluation and feedback.
 11. Why Rule-Based Evaluation?
 A deterministic evaluator was selected for the MVP because it provides:
@@ -201,11 +231,13 @@ Rule-based evaluation cannot fully understand the quality of an arbitrary LLD de
 A future version can introduce AI-based reasoning while keeping the same overall practice flow.
 12. Extensibility
 The evaluation system can be extended in the future:
+```
 Evaluator
    |
    ├── RuleBasedEvaluator
    ├── AIEvaluator
    └── HumanEvaluator
+```
 The submission format can also be extended from text to:
 • UML diagrams
 • Class diagrams
@@ -220,8 +252,10 @@ Unexpected server/database error → 500 Internal Server Error
 14. Testing
 The backend uses Jest and Supertest.
 Run:
+```
 cd server
 npm test
+```
 The test suite contains 10 automated API tests covering:
 • API health check
 • Problem listing
