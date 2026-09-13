@@ -188,6 +188,7 @@ EVALUATING
 FAILED
 ```
 The state model also allows asynchronous evaluation in a future version.
+
 10. API Endpoints
 ```
 GET /api/health
@@ -218,6 +219,7 @@ Returns previous attempts with their evaluation and feedback.
 GET /api/attempts/:id
 ```
 Returns a specific attempt with its problem, evaluation and feedback.
+
 11. Why Rule-Based Evaluation?
 A deterministic evaluator was selected for the MVP because it provides:
 • Consistent results
@@ -229,6 +231,7 @@ A deterministic evaluator was selected for the MVP because it provides:
 Limitation:
 Rule-based evaluation cannot fully understand the quality of an arbitrary LLD design.
 A future version can introduce AI-based reasoning while keeping the same overall practice flow.
+
 12. Extensibility
 The evaluation system can be extended in the future:
 ```
@@ -243,12 +246,14 @@ The submission format can also be extended from text to:
 • Class diagrams
 • Code submissions
 • Other structured formats
+
 13. Error Handling
 The backend handles common invalid requests.
 Missing submission → 400 Bad Request
 Unknown problem → 404 Not Found
 Unknown attempt → 404 Not Found
 Unexpected server/database error → 500 Internal Server Error
+
 14. Testing
 The backend uses Jest and Supertest.
 Run:
@@ -270,6 +275,7 @@ The test suite contains 10 automated API tests covering:
 • Individual attempt retrieval
 • Unknown attempt handling
 All current tests pass successfully.
+
 15. Design Decisions
 Simple Monolithic Architecture:
 A simple monolithic backend was selected because the assignment focuses on LLD and domain design rather than distributed systems.
@@ -279,6 +285,7 @@ Text-Based Submission:
 Text is sufficient for communicating requirements, assumptions, classes, responsibilities, design reasoning, and edge cases.
 Deterministic Evaluation:
 The MVP uses deterministic evaluation to make scoring predictable and explainable.
+
 16. Known Limitations
 • Evaluation is rule-based.
 • The evaluator cannot completely understand arbitrary designs.
@@ -287,6 +294,7 @@ The MVP uses deterministic evaluation to make scoring predictable and explainabl
 • Text is the primary submission format.
 • Evaluation currently happens synchronously.
 • The project is primarily intended as an MVP/prototype.
+
 17. Future Improvements
 • AI-powered LLD evaluation
 • UML/class diagram submissions
@@ -301,6 +309,7 @@ The MVP uses deterministic evaluation to make scoring predictable and explainabl
 • Detailed progress analytics
 • Asynchronous evaluation
 • Background evaluation workers
+
 18. Documentation
 DESIGN.md:
 Architecture, domain model, evaluation approach, extensibility, error handling, testing strategy, and design trade-offs.
@@ -308,5 +317,6 @@ RESEARCH.md:
 Research into LLD practice approaches, common LLD problem patterns, evaluation considerations, product opportunities, and product decisions.
 AI_USAGE.md:
 AI-assisted development decisions, AI suggestions, accepted/rejected decisions, and reasoning behind final implementation choices.
+
 19. License
 This project was developed as an engineering assignment and prototype.
