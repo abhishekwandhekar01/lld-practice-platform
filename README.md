@@ -4,25 +4,24 @@ A web-based Low-Level Design (LLD) practice platform that helps learners practic
 Core Practice Flow:
 Choose Problem → Design Solution → Submit → Get Feedback → Review → Try Again
 2. Features
-
-• Browse LLD practice problems
-• Search problems
-• Filter problems by difficulty
-• View problem requirements and description
-• Write LLD solutions
-• Submit solutions
-• Automatic evaluation
-• Score out of 100
-• Criterion-wise feedback
-• Evidence for evaluation
-• Concerns and improvement suggestions
-• Confidence score
-• View previous attempts
-• Review individual attempts
-• Track practice statistics
-• REST API
-• Persistent database
-• Automated backend tests
+• Browse LLD practice problems \
+• Search problems \
+• Filter problems by difficulty \
+• View problem requirements and description \
+• Write LLD solutions \
+• Submit solutions \
+• Automatic evaluation \
+• Score out of 100 \
+• Criterion-wise feedback \
+• Evidence for evaluation \
+• Concerns and improvement suggestions \
+• Confidence score \
+• View previous attempts \
+• Review individual attempts \
+• Track practice statistics \
+• REST API \
+• Persistent database \
+• Automated backend tests \ 
 
 3. Tech Stack
 
