@@ -21,33 +21,29 @@ Choose Problem → Design Solution → Submit → Get Feedback → Review → Tr
 • Track practice statistics \
 • REST API \
 • Persistent database \
-• Automated backend tests \ 
+• Automated backend tests  
 
 3. Tech Stack
 
 Frontend:
-
-• React
-• Vite
-• JavaScript
-• React Router
-• CSS
+• React \
+• Vite \
+• JavaScript \
+• React Router \
+• CSS \
 • Lucide React
 
 Backend:
-
-• Node.js
-• Express.js
-• Prisma ORM
-• SQLite
+• Node.js \
+• Express.js \
+• Prisma ORM \
+• SQLite \
 
 Testing:
-
-• Jest
-• Supertest
+• Jest \
+• Supertest \
 
 4. Project Structure
-
 ```
 lld-practice-platform/
 │
@@ -90,9 +86,8 @@ lld-practice-platform/
 5. Getting Started
 
 Prerequisites:
-
-• Node.js
-• npm
+• Node.js \
+• npm \
 
 Backend setup:
 1. Open a terminal in the project folder.
@@ -139,11 +134,10 @@ The learner can browse available LLD problems. Problems can be searched, filtere
 2. Practice
 
 The learner prepares a solution covering:
-
-• Requirements and assumptions
-• Classes and responsibilities
-• Design and reasoning
-• Edge cases and extensibility
+• Requirements and assumptions \
+• Classes and responsibilities \
+• Design and reasoning \
+• Edge cases and extensibility \
 
 3. Submission
 
@@ -156,13 +150,12 @@ The submitted solution is evaluated using a deterministic rule-based evaluator.
 5. Feedback
 
 The learner receives:
-
-• Score
-• Maximum score
-• Evidence
-• Concern
-• Suggestion
-• Confidence
+• Score \
+• Maximum score \
+• Evidence \
+• Concern \
+• Suggestion \
+• Confidence 
 
 6. Attempt History
 
@@ -170,12 +163,12 @@ Every submission is stored as an attempt. Learners can view previous attempts, s
 
 7. Evaluation
 
-The MVP evaluates solutions across four criteria:
-Requirements & Assumptions — 20 points
-Classes & Responsibilities — 30 points
-Design & Reasoning — 30 points
-Edge Cases & Extensibility — 20 points
-Total — 100 points
+The MVP evaluates solutions across four criteria: \
+Requirements & Assumptions — 20 points \
+Classes & Responsibilities — 30 points \
+Design & Reasoning — 30 points \
+Edge Cases & Extensibility — 20 points \
+Total — 100 points \
 The evaluator looks for evidence related to requirements, domain classes, responsibilities, design concepts, extensibility, and edge cases.
 
 8. Domain Model
@@ -251,16 +244,14 @@ Returns a specific attempt with its problem, evaluation and feedback.
 11. Why Rule-Based Evaluation?
 
 A deterministic evaluator was selected for the MVP because it provides:
-
-• Consistent results
-• Fast feedback
-• Predictable scoring
-• Easy testing
-• No external AI API dependency
-• Explainable behaviour
+• Consistent results \
+• Fast feedback \
+• Predictable scoring \
+• Easy testing \
+• No external AI API dependency \
+• Explainable behaviour 
 
 Limitation:
-
 Rule-based evaluation cannot fully understand the quality of an arbitrary LLD design.
 A future version can introduce AI-based reasoning while keeping the same overall practice flow.
 
@@ -274,19 +265,18 @@ Evaluator
    └── HumanEvaluator
 ```
 The submission format can also be extended from text to:
-
-• UML diagrams
-• Class diagrams
-• Code submissions
-• Other structured formats
+• UML diagrams \
+• Class diagrams \
+• Code submissions \
+• Other structured formats 
 
 13. Error Handling
 
 The backend handles common invalid requests.
 
-Missing submission → 400 Bad Request
-Unknown problem → 404 Not Found
-Unknown attempt → 404 Not Found
+Missing submission → 400 Bad Request \
+Unknown problem → 404 Not Found \
+Unknown attempt → 404 Not Found \
 Unexpected server/database error → 500 Internal Server Error
 
 14. Testing
@@ -298,17 +288,17 @@ npm test
 ```
 The test suite contains 10 automated API tests covering:
 
-• API health check
-• Problem listing
-• Problem retrieval
-• Unknown problem handling
-• Missing submission validation
-• Invalid problem handling
-• Attempt creation
-• Evaluation generation
-• Structured feedback
-• Attempt history
-• Individual attempt retrieval
+• API health check \
+• Problem listing \
+• Problem retrieval \
+• Unknown problem handling \
+• Missing submission validation \
+• Invalid problem handling \
+• Attempt creation \
+• Evaluation generation \
+• Structured feedback \
+• Attempt history \
+• Individual attempt retrieval \
 • Unknown attempt handling
 
 All current tests pass successfully.
@@ -327,32 +317,31 @@ The MVP uses deterministic evaluation to make scoring predictable and explainabl
 
 16. Known Limitations
 
-• Evaluation is rule-based.
-• The evaluator cannot completely understand arbitrary designs.
-• Authentication is not implemented.
-• User accounts are not implemented.
-• Text is the primary submission format.
-• Evaluation currently happens synchronously.
+• Evaluation is rule-based. \
+• The evaluator cannot completely understand arbitrary designs. \
+• Authentication is not implemented. \
+• User accounts are not implemented. \
+• Text is the primary submission format. \
+• Evaluation currently happens synchronously. \
 • The project is primarily intended as an MVP/prototype.
 
 17. Future Improvements
 
-• AI-powered LLD evaluation
-• UML/class diagram submissions
-• Code-based submissions
-• Code compilation and testing
-• Human expert review
-• Authentication
-• User profiles
-• Personalized recommendations
-• More LLD problems
-• Difficulty progression
-• Detailed progress analytics
-• Asynchronous evaluation
+• AI-powered LLD evaluation \
+• UML/class diagram submissions \
+• Code-based submissions \
+• Code compilation and testing \
+• Human expert review \
+• Authentication \
+• User profiles \
+• Personalized recommendations \
+• More LLD problems \
+• Difficulty progression \
+• Detailed progress analytics \
+• Asynchronous evaluation \
 • Background evaluation workers
 
 18. Documentation
-
 DESIGN.md:
 Architecture, domain model, evaluation approach, extensibility, error handling, testing strategy, and design trade-offs.
 RESEARCH.md:
